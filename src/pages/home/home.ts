@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { UnviredCordovaSDK, LoginParameters, LoginResult } from '@ionic-native/unvired-cordova-sdk/ngx'
-
+declare var navigator: any;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -13,9 +13,16 @@ export class HomePage {
 
   }
 
-  OnPrimaryButtonClick() {
+  onCameraButtonWithoutIonicNativeClick() {
     console.log('Camera Button Clicked');
+    navigator.camera.getPicture(function onSuccess(success) {
+      console.log("Successfully clicked the picture:" + success);
+    }, function onError(error) {
+      console.log("Error Capturing the picture: " + error);
+    }, {})
+  }
 
+  onCameraButtonWithIonicNativeClick() {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.FILE_URI,
@@ -34,7 +41,7 @@ export class HomePage {
     });
   }
 
-  async OnSecondaryButtonClick() {
+  async onUnviredSDKButtonClick() {
     console.log('Secondary Button Clicked');
     // This is usually done in app.component.ts of your app.
     // Before you can interact with UMP, you need to initialize the SDK and authenticate with UMP.
