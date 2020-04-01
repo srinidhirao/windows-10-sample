@@ -56,5 +56,5 @@ $ ionic cordova prepare windows
 2. Open the file platforms/windows/CordovaApp.vs2013 in Visual Studio
 3. In the solution explorer, set the project CordovaApp.Windows10 (Universal Windows) as the startup project.
 4. Run the app on the Local Machine.
-5. Once the app loads, click on the button, 'Test Camera Plugin'. Visual Studio's JS console, will report an error, Function Expected.
-6. Click on 'Test Unvired SDK Plugin'. JS console will report the same error again even for Unvired SDK
+5. Once the app loads, click on the button, 'Test Camera Plugin (Ionic Native)'. Visual Studio's JS console, will report an error, Function Expected.
+6. Click on 'Test Camera Plugin (Without Ionic Native)'. Native Camera opens up.
