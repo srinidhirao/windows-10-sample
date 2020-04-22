@@ -1,6 +1,16 @@
 
 Summary
 -
+
+Update: 22 Apr 2020
+
+Using the Unvired Cordova SDK with the help of a Typescript helper(UnviredSDKHelper.ts):
+If we use a typescript helper wrapper, then we can offer a consistent interface for calling apis in Cordova layer.
+
+currently, when you test the Unvired SDK login api, it fails with an error message saying specify metadata.json. 
+
+If we do specify the file, then it fails to parse due to missing NewtonSoftJSON library. This needs to be figured out.
+
 This project demonstrates the issue of building a Windows 10 Universal app with Ionic 5. The commonly used Camera Plugin fails with an error saying 'Function Expected', possibly relating to the syntax in which the plugin is modeled.
 
 Windows 10 support is added by way of updating config.xml file as mentioned here:

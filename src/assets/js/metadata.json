@@ -1,0 +1,1200 @@
+{
+    "name": "DIGITAL_FORMS",
+    "description": "Digital Forms",
+    "version": "2.0",
+    "DWNLD_TIME": {
+        "description": "Description",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "DWNLD_TIME_HEADER": {
+            "description": "Last downloaded time",
+            "className": "com.digital.forms.gen.be.DWNLD_TIME_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "ID",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TIME",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                }
+            ]
+        }
+    },
+    "FORM": {
+        "description": "Description",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "FORM_HEADER": {
+            "description": "Form",
+            "className": "com.digital.forms.gen.be.FORM_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "FORM_ID",
+                    "description": "Form Id",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "VERSION",
+                    "description": "Recent form version",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "FORM_NAME",
+                    "description": "Form Name",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_DESIGN",
+                    "description": "Form json data",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_DESC",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "UPDATED_DATE",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "AVATAR",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "CATEGORY",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "RESOURCES",
+                    "description": "Resources used by the form",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "ATTRIBUTES",
+                    "description": "Attributes",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TRANSLATION",
+                    "description": "Translations",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TEAM_ASSIGNMENT",
+                    "description": "All the teams the form is part of",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "CUSTOM_ATTRIBUTE",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "FORMSET": {
+        "description": "Description",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "FORMSET_HEADER": {
+            "description": "Formset",
+            "className": "com.digital.forms.gen.be.FORMSET_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "ID",
+                    "description": "Formset Id",
+                    "isGid": true,
+                    "length": "50",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "NAME",
+                    "description": "Form set name",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORMSET_DESC",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "AVATAR",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "CREATED_BY",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "CREATED_ON",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "TEAM_ASSIGNMENT",
+                    "description": "All the teams this formset part of",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        },
+        "FORMSET_FORM": {
+            "className": "com.digital.forms.gen.be.FORMSET_FORM",
+            "field": [
+                {
+                    "name": "FORMSET_ID",
+                    "description": "Formset Id",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_ID",
+                    "description": "Associated form id",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "INPUT_EMAIL_PDF": {
+        "description": "Description",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "INPUT_EMAIL_PDF_HEADER": {
+            "className": "com.digital.forms.gen.be.INPUT_EMAIL_PDF_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "TASK_ID",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_ID",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "EMAIL_IDS",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "SEND_TO_SELF",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "INPUT_REOPEN_TASK": {
+        "description": "Description",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "INPUT_REOPEN_TASK_HEADER": {
+            "className": "com.digital.forms.gen.be.INPUT_REOPEN_TASK_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "TASK_ID",
+                    "description": "Task Id ",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_ID",
+                    "description": "Form Id",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "MASTER_DATA": {
+        "description": "Resource",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "MASTER_DATA_HEADER": {
+            "className": "com.digital.forms.gen.be.MASTER_DATA_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "SUBMISSION_ID",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "RESOURCE_NAME",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "DATA",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "PRIORITY": {
+        "description": "Description",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "PRIORITY_HEADER": {
+            "description": "Description",
+            "className": "com.digital.forms.gen.be.PRIORITY_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "PRIORITY_VALUE",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "PRIORITY_NAME",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "RESOURCE": {
+        "description": "Resource used by form",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "RESOURCE_HEADER": {
+            "className": "com.digital.forms.gen.be.RESOURCE_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "FORM_ID",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_VERSION",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "RESOURCE_USED",
+                    "description": "Base 64 string of resources used by the form",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "SETTINGS": {
+        "description": "Settings",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "SETTINGS_HEADER": {
+            "description": "Settings Details",
+            "className": "com.digital.forms.gen.be.SETTINGS_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "SETTINGS_KEY",
+                    "description": "Key",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "SETTINGS_VALUE",
+                    "description": "Value",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "TASK": {
+        "description": "Task",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "TASK_HEADER": {
+            "className": "com.digital.forms.gen.be.TASK_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "TASK_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "REF_TASK_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_SET_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TASK_DESC",
+                    "description": "",
+                    "isGid": false,
+                    "length": "1024",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TASK_TYPE",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TASK_SOURCE",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "PRIMARY_USER",
+                    "description": "",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "PRIMARY_TEAM",
+                    "description": "",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TASK_STATUS",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TASK_DUEDATE",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "CREATED_BY",
+                    "description": "",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "COMPLETED_BY",
+                    "description": "",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "COMMENTS",
+                    "description": "",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "CREATED_ON",
+                    "description": "",
+                    "isGid": false,
+                    "length": "19",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "COMPLETED_ON",
+                    "description": "",
+                    "isGid": false,
+                    "length": "19",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "LAST_SUBMITTED_ON",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "PRIORITY",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "P_MODE",
+                    "description": "",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TEAM_ASSIGNMENT",
+                    "description": "Team if which the form is part of",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "WORKFLOW_COMMENTS",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "TASK_ALERT": {
+        "description": "",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "TASK_ALERT_HEADER": {
+            "className": "com.digital.forms.gen.be.TASK_ALERT_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "ALERT_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "50",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TASK_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORMSET_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "USER_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "MESSAGE",
+                    "description": "",
+                    "isGid": false,
+                    "length": "1000",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "ALERT_ICON",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "UPDATED_ON",
+                    "description": "",
+                    "isGid": false,
+                    "length": "19",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                }
+            ]
+        }
+    },
+    "TASK_MESSAGE": {
+        "description": "Task Message",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "TASK_MESSAGE_HEADER": {
+            "className": "com.digital.forms.gen.be.TASK_MESSAGE_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "MESSAGE_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TASK_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "MESSAGE",
+                    "description": "",
+                    "isGid": false,
+                    "length": "500",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "CREATED_BY",
+                    "description": "",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "CREATED_ON",
+                    "description": "Timestamp",
+                    "isGid": false,
+                    "length": "19",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                }
+            ]
+        }
+    },
+    "TASK_SUBMISSION": {
+        "description": "Task form submissions",
+        "attachments": true,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "TASK_SUBMISSION_HEADER": {
+            "className": "com.digital.forms.gen.be.TASK_SUBMISSION_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "TASK_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "VERSION_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "19",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "SUBMISSION_ID",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_DATA",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "SERVER_DATA",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "SERVER_TIMESTAMP",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "FORM_NAME",
+                    "description": "Required to get submission data from form.io",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "P_MODE",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "DIFF",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FORM_STATE",
+                    "description": "INITIAL, IN-PROGRESS and READY in client",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "LAST_UPDATED_BY",
+                    "description": "Last updated user id",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "LAST_UPDATED_AT",
+                    "description": "Last updated time of particular user",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                }
+            ]
+        },
+        "TASK_SUBMISSION_ATTACHMENT": {
+            "description": "Attachment",
+            "className": "com.digital.forms.gen.be.TASK_SUBMISSION_ATTACHMENT",
+            "attachment": true,
+            "field": [
+                {
+                    "name": "UID",
+                    "description": "UID",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FILE_NAME",
+                    "description": "File Name",
+                    "isGid": false,
+                    "length": "255",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "MIME_TYPE",
+                    "description": "Mime Type",
+                    "isGid": false,
+                    "length": "20",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "URL",
+                    "description": "Download URL",
+                    "isGid": false,
+                    "length": "255",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "EXTERNAL_URL",
+                    "description": "External or Internal URL",
+                    "isGid": false,
+                    "length": "1",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "URL_REQUIRES_AUTH",
+                    "description": "External URL Requires Authentication",
+                    "isGid": false,
+                    "length": "1",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "LOCAL_PATH",
+                    "description": "Path to the file on the device",
+                    "isGid": false,
+                    "length": "255",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "NO_CACHE",
+                    "description": "Do not cache",
+                    "isGid": false,
+                    "length": "1",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "SERVER_TIMESTAMP",
+                    "description": "Server timestamp",
+                    "isGid": false,
+                    "length": "20",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "TAG1",
+                    "description": "Tag 1",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TAG2",
+                    "description": "Tag 2",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TAG3",
+                    "description": "Tag 3",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TAG4",
+                    "description": "Tag 4",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TAG5",
+                    "description": "Tag 5",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "ATTACHMENT_STATUS",
+                    "description": "Status",
+                    "isGid": false,
+                    "length": "32",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "AUTO_DOWNLOAD",
+                    "description": "Auto Download Flag",
+                    "isGid": false,
+                    "length": "1",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "PARAM",
+                    "description": "Name of the param",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "MESSAGE",
+                    "description": "Message from User",
+                    "isGid": false,
+                    "length": "100",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "TASK_USER": {
+        "description": "Task User",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "TASK_USER_HEADER": {
+            "className": "com.digital.forms.gen.be.TASK_USER_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "TASK_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "USER_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "STATUS",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "COMMENTS",
+                    "description": "",
+                    "isGid": false,
+                    "length": "500",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TASK_DESC",
+                    "description": "Reason",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "COMPLETED_ON",
+                    "description": "Time in miliseconds",
+                    "isGid": false,
+                    "length": "19",
+                    "mandatory": false,
+                    "sqlType": "INTEGER"
+                },
+                {
+                    "name": "READ_ONLY",
+                    "description": "",
+                    "isGid": false,
+                    "length": "2",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "P_MODE",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FAIL_REVIEW_COMMENTS",
+                    "description": "Comments when forms has errors",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "LOCK",
+                    "description": "Filling Started flag for exclusive sharing option",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "TEAMS": {
+        "description": "Teams",
+        "attachments": false,
+        "onConflict": "SERVER_WINS",
+        "save": true,
+        "TEAMS_HEADER": {
+            "className": "com.digital.forms.gen.be.TEAMS_HEADER",
+            "header": true,
+            "field": [
+                {
+                    "name": "TEAM_ID",
+                    "description": "",
+                    "isGid": true,
+                    "length": "32",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TEAM_NAME",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TEAM_DESCRIPTION",
+                    "description": "",
+                    "isGid": false,
+                    "length": "65535",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "MANAGER",
+                    "description": "",
+                    "isGid": false,
+                    "length": "50",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "AVATAR",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        },
+        "TEAM_MEMBER": {
+            "description": "Users associated with team",
+            "className": "com.digital.forms.gen.be.TEAM_MEMBER",
+            "field": [
+                {
+                    "name": "USER_ID",
+                    "description": "User unique Id",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "TEAM_ID",
+                    "description": "Team Id",
+                    "isGid": true,
+                    "length": "0",
+                    "mandatory": true,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "USERNAME",
+                    "description": "User Id mapped with UMP",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "FNAME",
+                    "description": "First Name",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "LNAME",
+                    "description": "Last Name",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "EMAIL",
+                    "description": "Email",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "ROLE",
+                    "description": "Role",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                },
+                {
+                    "name": "AVATAR",
+                    "description": "Profile picture",
+                    "isGid": false,
+                    "length": "0",
+                    "mandatory": false,
+                    "sqlType": "TEXT"
+                }
+            ]
+        }
+    },
+    "Index": []
+}

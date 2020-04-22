@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { UnviredCordovaSDK } from '@ionic-native/unvired-cordova-sdk/ngx';
+import { UnviredSDKHelper } from '../Services/UnviredSDKHelper';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { UnviredCordovaSDK } from '@ionic-native/unvired-cordova-sdk/ngx';
     UnviredCordovaSDK,
     StatusBar,
     SplashScreen,
+    UnviredSDKHelper,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

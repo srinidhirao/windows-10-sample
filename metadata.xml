@@ -1,0 +1,584 @@
+<Application description="Digital Forms" name="FORMS" namespace="PD" package="com.pd.forms" version="1.2">
+    <BusinessEntity attachments="false" description="Form Category" name="CATEGORY" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.CATEGORY_HEADER" description="" name="CATEGORY_HEADER">
+            <Field description="" isGid="true" length="32" mandatory="true" name="CAT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="DESCR" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="L_TMPCNT" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Company" name="COMPANY" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.COMPANY_HEADER" description="" name="COMPANY_HEADER">
+            <Field description="" isGid="true" length="0" mandatory="true" name="CODE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="DESCR" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="LOGO" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="" name="CONTACT" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.CONTACT_HEADER" description="" name="CONTACT_HEADER">
+            <Field description="" isGid="true" length="50" mandatory="true" name="USER_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="32" mandatory="true" name="CONTACT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="CONTACT_PERSON" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="20" mandatory="false" name="PHONE_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="EMAIL_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Crew" name="CREW" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.CREW_HEADER" description="" name="CREW_HEADER">
+            <Field description="" isGid="false" length="0" mandatory="true" name="USER_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="true" name="USER_NAME" sqlType="TEXT"/>
+            <Field description="Personnel Number" isGid="true" length="8" mandatory="true" name="PERSON_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="DESIGNATION" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="COMP_CODE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="E-Mail Address" isGid="false" length="241" mandatory="false" name="EMAIL" sqlType="TEXT"/>
+            <Field description="Telephone Number" isGid="false" length="14" mandatory="false" name="MAINPH" sqlType="TEXT"/>
+            <Field description="Telephone Number" isGid="false" length="14" mandatory="false" name="CELPH" sqlType="TEXT"/>
+            <Field description="External Person ID" isGid="false" length="20" mandatory="false" name="GLOBALID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="SOURCE" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="true" description="Critical Task Assessment" name="CTA" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.CTA_HEADER" description="" name="CTA_HEADER">
+            <Field description="" isGid="true" length="32" mandatory="true" name="CTA_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="DESCR" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CRTD_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="PBLSH_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="PBLSH_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </header>
+        <item className="com.pd.forms.be.CTA_TMPLT" description="" name="CTA_TMPLT">
+            <Field description="" isGid="true" length="32" mandatory="true" name="CTA_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="32" mandatory="true" name="TEMPLATE_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.CTA_ASSGN" description="" name="CTA_ASSGN">
+            <Field description="" isGid="true" length="32" mandatory="true" name="CTA_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="20" mandatory="true" name="RIG_TYPE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.CTA_DOC" description="" name="CTA_DOC">
+            <Field description="" isGid="true" length="32" mandatory="true" name="DOC_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="32" mandatory="true" name="CTA_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="255" mandatory="false" name="URL" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="255" mandatory="false" name="FILE_NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.CTA_ATTACHMENT" description="Attachment" name="CTA_ATTACHMENT">
+            <Field description="UID" isGid="true" length="32" mandatory="false" name="UID" sqlType="TEXT"/>
+            <Field description="File Name" isGid="false" length="255" mandatory="false" name="FILE_NAME" sqlType="TEXT"/>
+            <Field description="Mime Type" isGid="false" length="20" mandatory="false" name="MIME_TYPE" sqlType="TEXT"/>
+            <Field description="Download URL" isGid="false" length="255" mandatory="false" name="URL" sqlType="TEXT"/>
+            <Field description="External or Internal URL" isGid="false" length="1" mandatory="false" name="EXTERNAL_URL" sqlType="TEXT"/>
+            <Field description="External URL Requires Authentication" isGid="false" length="1" mandatory="false" name="URL_REQUIRES_AUTH" sqlType="TEXT"/>
+            <Field description="Path to the file on the device" isGid="false" length="255" mandatory="false" name="LOCAL_PATH" sqlType="TEXT"/>
+            <Field description="Do not cache" isGid="false" length="1" mandatory="false" name="NO_CACHE" sqlType="TEXT"/>
+            <Field description="Server timestamp" isGid="false" length="20" mandatory="false" name="SERVER_TIMESTAMP" sqlType="INTEGER"/>
+            <Field description="Tag 1" isGid="false" length="100" mandatory="false" name="TAG1" sqlType="TEXT"/>
+            <Field description="Tag 2" isGid="false" length="100" mandatory="false" name="TAG2" sqlType="TEXT"/>
+            <Field description="Tag 3" isGid="false" length="100" mandatory="false" name="TAG3" sqlType="TEXT"/>
+            <Field description="Tag 4" isGid="false" length="100" mandatory="false" name="TAG4" sqlType="TEXT"/>
+            <Field description="Tag 5" isGid="false" length="100" mandatory="false" name="TAG5" sqlType="TEXT"/>
+            <Field description="Status" isGid="false" length="32" mandatory="false" name="ATTACHMENT_STATUS" sqlType="TEXT"/>
+            <Field description="Auto Download Flag" isGid="false" length="1" mandatory="false" name="AUTO_DOWNLOAD" sqlType="TEXT"/>
+        </item>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Catalog Profile" name="C_CAT_PROFILE" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.C_CAT_PROFILE_HEADER" description="" name="C_CAT_PROFILE_HEADER">
+            <Field description="Catalog Profile" isGid="true" length="9" mandatory="true" name="CAT_PROFILE" sqlType="TEXT"/>
+            <Field description="Catalog Profile Text" isGid="false" length="30" mandatory="false" name="CAT_PROFILE_TXT" sqlType="TEXT"/>
+            <Field description="Catalog" isGid="false" length="1" mandatory="false" name="CATALOG_TYPE" sqlType="TEXT"/>
+            <Field description="Code Group" isGid="false" length="8" mandatory="false" name="CODE_GROUP" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Code" name="C_CODE" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.C_CODE_HEADER" description="" name="C_CODE_HEADER">
+            <Field description="Catalog" isGid="true" length="1" mandatory="true" name="CATALOG_TYPE" sqlType="TEXT"/>
+            <Field description="Code Group" isGid="true" length="8" mandatory="true" name="CODE_GROUP" sqlType="TEXT"/>
+            <Field description="Code" isGid="true" length="4" mandatory="true" name="CODE" sqlType="TEXT"/>
+            <Field description="Short Text for Code (Up to 40 Characters in Length)" isGid="false" length="40" mandatory="false" name="CODE_TEXT" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Catalog Code Group" name="C_CODE_GROUP" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.C_CODE_GROUP_HEADER" description="" name="C_CODE_GROUP_HEADER">
+            <Field description="Catalog" isGid="true" length="1" mandatory="true" name="CATALOG_TYPE" sqlType="TEXT"/>
+            <Field description="Code Group" isGid="true" length="8" mandatory="true" name="CODE_GROUP" sqlType="TEXT"/>
+            <Field description="Short Description of the Code Group" isGid="false" length="40" mandatory="false" name="CODE_GROUP_TEXT" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Notification Type" name="C_NOTIF_TYPE" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.C_NOTIF_TYPE_HEADER" description="" name="C_NOTIF_TYPE_HEADER">
+            <Field description="Notification Type" isGid="true" length="2" mandatory="true" name="NOTIF_TYPE" sqlType="TEXT"/>
+            <Field description="Notification Type Texts" isGid="false" length="20" mandatory="false" name="SHORT_TEXT" sqlType="TEXT"/>
+            <Field description="Notification Category" isGid="false" length="2" mandatory="false" name="NOTIF_CATEGORY" sqlType="TEXT"/>
+            <Field description="Catalog Profile" isGid="false" length="9" mandatory="false" name="CATALOG_PROFILE" sqlType="TEXT"/>
+            <Field description="Priority Type" isGid="false" length="2" mandatory="false" name="PRIORITY_TYPE" sqlType="TEXT"/>
+            <Field description="Status Profile" isGid="false" length="8" mandatory="false" name="STATUS_PROFILE_NOTIF" sqlType="TEXT"/>
+            <Field description="Status Profile" isGid="false" length="8" mandatory="false" name="STATUS_PROFILE_TASK" sqlType="TEXT"/>
+            <Field description="Catalog Type - Problems/Defects" isGid="false" length="1" mandatory="false" name="CAT_TYPE_DAMAGE" sqlType="TEXT"/>
+            <Field description="Catalog Type - Causes" isGid="false" length="1" mandatory="false" name="CAT_TYPE_CAUSE" sqlType="TEXT"/>
+            <Field description="Catalog Type - Tasks" isGid="false" length="1" mandatory="false" name="CAT_TYPE_TASK" sqlType="TEXT"/>
+            <Field description="Catalog Type - Activities" isGid="false" length="1" mandatory="false" name="CAT_TYPE_ACTIVITY" sqlType="TEXT"/>
+            <Field description="Catalog Type - Object Parts" isGid="false" length="1" mandatory="false" name="CAT_TYPE_OBJECT_PARTS" sqlType="TEXT"/>
+            <Field description="Catalog Type - Coding" isGid="false" length="1" mandatory="false" name="CAT_TYPE_CODING" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Priority" name="C_PRIORITY" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.C_PRIORITY_HEADER" description="" name="C_PRIORITY_HEADER">
+            <Field description="Priority Type" isGid="true" length="2" mandatory="true" name="PRIORITY_TYPE" sqlType="TEXT"/>
+            <Field description="Priority" isGid="true" length="1" mandatory="true" name="PRIORITY" sqlType="TEXT"/>
+            <Field description="Priority Text" isGid="false" length="20" mandatory="false" name="PRIORITY_DESC" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Work Center Profile and Details" name="C_WORK_CENTER" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.C_WORK_CENTER_HEADER" description="" name="C_WORK_CENTER_HEADER">
+            <Field description="Work center" isGid="true" length="8" mandatory="true" name="WORK_CENTER" sqlType="TEXT"/>
+            <Field description="Object Name" isGid="false" length="40" mandatory="false" name="WORK_CENTER_DESC" sqlType="TEXT"/>
+            <Field description="Plant" isGid="true" length="4" mandatory="true" name="PLANT" sqlType="TEXT"/>
+            <Field description="Name" isGid="false" length="30" mandatory="false" name="PLANT_DESC" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="true" description="Form" name="FORM" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.FORM_HEADER" description="" name="FORM_HEADER">
+            <Field description="" isGid="true" length="32" mandatory="true" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="32" mandatory="false" name="VER_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CRTD_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="SUBM_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="DATE_COMP" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="COMPANY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="OPERATOR" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="COMMENTS" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="FORM_STATUS" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="LAST_SYNC_USER" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="LAST_SYNC_TIME" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="TIME_ZONE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </header>
+        <item className="com.pd.forms.be.FORM_DATA" description="" name="FORM_DATA">
+            <Field description="" isGid="true" length="32" mandatory="true" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="DATA" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.FORM_ACTION" description="" name="FORM_ACTION">
+            <Field description="" isGid="true" length="0" mandatory="true" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="ACTION_CODE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.FORM_ATTACHMENT" description="Attachment" name="FORM_ATTACHMENT">
+            <Field description="UID" isGid="true" length="32" mandatory="false" name="UID" sqlType="TEXT"/>
+            <Field description="File Name" isGid="false" length="255" mandatory="false" name="FILE_NAME" sqlType="TEXT"/>
+            <Field description="Mime Type" isGid="false" length="20" mandatory="false" name="MIME_TYPE" sqlType="TEXT"/>
+            <Field description="Download URL" isGid="false" length="255" mandatory="false" name="URL" sqlType="TEXT"/>
+            <Field description="External or Internal URL" isGid="false" length="1" mandatory="false" name="EXTERNAL_URL" sqlType="TEXT"/>
+            <Field description="External URL Requires Authentication" isGid="false" length="1" mandatory="false" name="URL_REQUIRES_AUTH" sqlType="TEXT"/>
+            <Field description="Path to the file on the device" isGid="false" length="255" mandatory="false" name="LOCAL_PATH" sqlType="TEXT"/>
+            <Field description="Do not cache" isGid="false" length="1" mandatory="false" name="NO_CACHE" sqlType="TEXT"/>
+            <Field description="Server timestamp" isGid="false" length="20" mandatory="false" name="SERVER_TIMESTAMP" sqlType="INTEGER"/>
+            <Field description="Tag 1" isGid="false" length="100" mandatory="false" name="TAG1" sqlType="TEXT"/>
+            <Field description="Tag 2" isGid="false" length="100" mandatory="false" name="TAG2" sqlType="TEXT"/>
+            <Field description="Tag 3" isGid="false" length="100" mandatory="false" name="TAG3" sqlType="TEXT"/>
+            <Field description="Tag 4" isGid="false" length="100" mandatory="false" name="TAG4" sqlType="TEXT"/>
+            <Field description="Tag 5" isGid="false" length="100" mandatory="false" name="TAG5" sqlType="TEXT"/>
+            <Field description="Status" isGid="false" length="32" mandatory="false" name="ATTACHMENT_STATUS" sqlType="TEXT"/>
+            <Field description="Auto Download Flag" isGid="false" length="1" mandatory="false" name="AUTO_DOWNLOAD" sqlType="TEXT"/>
+        </item>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Description" name="INPUT_ARCHIVE_CONTEXT" onConflict="SERVER_WINS" save="false">
+        <header className="com.pd.forms.be.INPUT_ARCHIVE_CONTEXT_HEADER" description="" name="INPUT_ARCHIVE_CONTEXT_HEADER">
+            <Field description="" isGid="false" length="0" mandatory="false" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="STMR_ID" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Form Context" name="INPUT_FORM_CONTEXT" onConflict="SERVER_WINS" save="false">
+        <header className="com.pd.forms.be.INPUT_FORM_CONTEXT_HEADER" description="" name="INPUT_FORM_CONTEXT_HEADER">
+            <Field description="Form ID" isGid="false" length="0" mandatory="false" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="Template Version ID" isGid="false" length="0" mandatory="false" name="VER_ID" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Description" name="INPUT_NOTIF_CONTEXT" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.INPUT_NOTIF_CONTEXT_HEADER" description="" name="INPUT_NOTIF_CONTEXT_HEADER">
+            <Field description="" isGid="false" length="0" mandatory="false" name="COMP_CODE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TMPLT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="CRTD_BY" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Description" name="INPUT_PDF_REQUEST" onConflict="SERVER_WINS" save="false">
+        <header className="com.pd.forms.be.INPUT_PDF_REQUEST_HEADER" description="" name="INPUT_PDF_REQUEST_HEADER">
+            <Field description="" isGid="false" length="0" mandatory="false" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="DOWNLOAD" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="EMAIL" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="REPLY_TO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="SUBJECT" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="MESSAGE" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Report Context" name="INPUT_REPORT_CONTEXT" onConflict="SERVER_WINS" save="false">
+        <header className="com.pd.forms.be.INPUT_REPORT_CONTEXT_HEADER" description="" name="INPUT_REPORT_CONTEXT_HEADER">
+            <Field description="" isGid="false" length="19" mandatory="false" name="START_DATE" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="END_DATE" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="COMPANY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TMPLT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="SUBM_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="IS_COMP" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="OPERATOR" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Rig Context" name="INPUT_RIG_CONTEXT" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.INPUT_RIG_CONTEXT_HEADER" description="" name="INPUT_RIG_CONTEXT_HEADER">
+            <Field description="RIg No" isGid="false" length="0" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="Rig Type" isGid="false" length="0" mandatory="false" name="RIG_TYPE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="COMP_CODE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="DEVICE_NAME" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="STMR context" name="INPUT_STMR_CONTEXT" onConflict="SERVER_WINS" save="false">
+        <header className="com.pd.forms.be.INPUT_STMR_CONTEXT_HEADER" description="" name="INPUT_STMR_CONTEXT_HEADER">
+            <Field description="" isGid="false" length="0" mandatory="false" name="STMR_ID" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Description" name="INPUT_TMPLT_CONTEXT" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.INPUT_TMPLT_CONTEXT_HEADER" description="Description" name="INPUT_TMPLT_CONTEXT_HEADER">
+            <Field description="" isGid="false" length="0" mandatory="false" name="TMPLT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="VER_ID" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="true" description="Notification Header Details" name="NOTIF" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.NOTIF_HEADER" description="" name="NOTIF_HEADER">
+            <Field description="Notification No" isGid="true" length="12" mandatory="true" name="NOTIF_NO" sqlType="TEXT"/>
+            <Field description="Notification Type" isGid="false" length="2" mandatory="false" name="NOTIF_TYPE" sqlType="TEXT"/>
+            <Field description="Notification Type Texts" isGid="false" length="20" mandatory="false" name="NOTIF_TYPE_TEXT" sqlType="TEXT"/>
+            <Field description="Partner" isGid="false" length="12" mandatory="false" name="USER_RESPONSIBLE" sqlType="TEXT"/>
+            <Field description="Short Text" isGid="false" length="40" mandatory="false" name="SHORT_TEXT" sqlType="TEXT"/>
+            <Field description="Priority" isGid="false" length="1" mandatory="false" name="PRIORITY" sqlType="TEXT"/>
+            <Field description="Priority Text" isGid="false" length="20" mandatory="false" name="PRIORITY_DESC" sqlType="TEXT"/>
+            <Field description="Functional Location" isGid="false" length="30" mandatory="false" name="FUNC_LOC_ID" sqlType="TEXT"/>
+            <Field description="Description of functional location" isGid="false" length="40" mandatory="false" name="FUNC_LOC_DESC" sqlType="TEXT"/>
+            <Field description="Equipment Number" isGid="false" length="18" mandatory="false" name="EQUIP_ID" sqlType="TEXT"/>
+            <Field description="Description of technical object" isGid="false" length="40" mandatory="false" name="EQUIP_DESC" sqlType="TEXT"/>
+            <Field description="Assembly" isGid="false" length="40" mandatory="false" name="ASSEMBLY" sqlType="TEXT"/>
+            <Field description="Description of PM Assembly" isGid="false" length="40" mandatory="false" name="ASSEMBLY_DESC" sqlType="TEXT"/>
+            <Field description="Start of Malfunction (Date)" isGid="false" length="10" mandatory="false" name="MALFN_START_DAT" sqlType="TEXT"/>
+            <Field description="Start of Malfunction (Time)" isGid="false" length="8" mandatory="false" name="MALFN_START_TIME" sqlType="TEXT"/>
+            <Field description="End of Malfunction (Date)" isGid="false" length="10" mandatory="false" name="MALFN_END_DAT" sqlType="TEXT"/>
+            <Field description="End of Malfunction (Time)" isGid="false" length="8" mandatory="false" name="MALFN_END_TIM" sqlType="TEXT"/>
+            <Field description="Revision for Plant Maintenance and Customer Service" isGid="false" length="8" mandatory="false" name="REVISION" sqlType="TEXT"/>
+            <Field description="Revision description" isGid="false" length="40" mandatory="false" name="REVISION_DESC" sqlType="TEXT"/>
+            <Field description="Breakdown Indicator" isGid="false" length="1" mandatory="false" name="BREAKDWN_FLAG" sqlType="TEXT"/>
+            <Field description="Breakdown Duration" isGid="false" length="6" mandatory="false" name="BREAKDWN_DURTN" sqlType="REAL"/>
+            <Field description="Unit for Breakdown Duration" isGid="false" length="3" mandatory="false" name="BREAKDWN_DURTN_UNIT" sqlType="TEXT"/>
+            <Field description="ISO code for unit of measurement" isGid="false" length="3" mandatory="false" name="BRKDWN_DUR_UNIT_COD" sqlType="TEXT"/>
+            <Field description="Date of Notification" isGid="false" length="10" mandatory="false" name="NOTIF_DAT" sqlType="TEXT"/>
+            <Field description="Time of Notification" isGid="false" length="8" mandatory="false" name="NOTIF_TIM" sqlType="TEXT"/>
+            <Field description="Required start date" isGid="false" length="10" mandatory="false" name="REQ_START_DAT" sqlType="TEXT"/>
+            <Field description="Required Start Time" isGid="false" length="8" mandatory="false" name="REQ_START_TIM" sqlType="TEXT"/>
+            <Field description="Required End Date" isGid="false" length="10" mandatory="false" name="REQ_END_DAT" sqlType="TEXT"/>
+            <Field description="Requested End Time" isGid="false" length="8" mandatory="false" name="REQ_END_TIM" sqlType="TEXT"/>
+            <Field description="Order Number" isGid="false" length="12" mandatory="false" name="ORDR_ID" sqlType="TEXT"/>
+            <Field description="Maintenance Plant" isGid="false" length="4" mandatory="false" name="MAINTAIN_PLANT" sqlType="TEXT"/>
+            <Field description="Name" isGid="false" length="30" mandatory="false" name="MAINTAIN_PLANT_DESC" sqlType="TEXT"/>
+            <Field description="Maintenance Planning Plant" isGid="false" length="4" mandatory="false" name="MAINTAIN_PLNG_PLANT" sqlType="TEXT"/>
+            <Field description="Planner Group for Customer Service and Plant Maintenance" isGid="false" length="3" mandatory="false" name="PLANNER_GRP" sqlType="TEXT"/>
+            <Field description="Name of the Maintenance Planner Group" isGid="false" length="18" mandatory="false" name="PLANNER_GRP_DESC" sqlType="TEXT"/>
+            <Field description="Main work center for maintenance tasks" isGid="false" length="8" mandatory="false" name="MAIN_WORK_CNTR" sqlType="TEXT"/>
+            <Field description="Short Text for Work Center" isGid="false" length="40" mandatory="false" name="MAIN_WORK_CNTR_DESC" sqlType="TEXT"/>
+            <Field description="Plant associated with main work center" isGid="false" length="4" mandatory="false" name="MAIN_WRK_CNTR_PLANT" sqlType="TEXT"/>
+            <Field description="Personnel Number" isGid="false" length="8" mandatory="false" name="PERSON_NO" sqlType="INTEGER"/>
+            <Field description="Name of Person who Created the Object" isGid="false" length="12" mandatory="false" name="PERSON_NAME" sqlType="TEXT"/>
+            <Field description="Name of Person Reporting Notification" isGid="false" length="12" mandatory="false" name="REPRTD_BY" sqlType="TEXT"/>
+            <Field description="Catalog Type - Coding" isGid="false" length="1" mandatory="false" name="CAT_TYPE" sqlType="TEXT"/>
+            <Field description="Code Group - Coding" isGid="false" length="8" mandatory="false" name="CODE_GRP" sqlType="TEXT"/>
+            <Field description="Short Description of the Code Group" isGid="false" length="40" mandatory="false" name="CODE_GRP_DESC" sqlType="TEXT"/>
+            <Field description="Coding" isGid="false" length="4" mandatory="false" name="CODE" sqlType="TEXT"/>
+            <Field description="Short Text for Code (Up to 40 Characters in Length)" isGid="false" length="40" mandatory="false" name="CODE_DESC" sqlType="TEXT"/>
+            <Field description="Effect on Operation" isGid="false" length="1" mandatory="false" name="EFFECT" sqlType="TEXT"/>
+            <Field description="Availability Before Malfunction" isGid="false" length="3" mandatory="false" name="AVL_BEFORE_MALFN" sqlType="INTEGER"/>
+            <Field description="System Condition Before Malfunction" isGid="false" length="1" mandatory="false" name="COND_BEFORE_MALFN" sqlType="TEXT"/>
+            <Field description="Availability After Malfunction" isGid="false" length="3" mandatory="false" name="AVL_AFTER_MALFN" sqlType="INTEGER"/>
+            <Field description="System Condition After Malfunction" isGid="false" length="1" mandatory="false" name="COND_AFTER_MALFN" sqlType="TEXT"/>
+            <Field description="System Status" isGid="false" length="40" mandatory="false" name="SYST_STAT" sqlType="TEXT"/>
+            <Field description="Field for user status display" isGid="false" length="40" mandatory="false" name="USER_STATUS" sqlType="TEXT"/>
+            <Field description="General Flag" isGid="false" length="1" mandatory="false" name="HISTORY_FLAG" sqlType="TEXT"/>
+            <Field description="Processing mode for incoming values" isGid="false" length="1" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </header>
+        <item className="com.pd.forms.be.NOTIF_LONG_TEXT_ADD" description="" name="NOTIF_LONG_TEXT_ADD">
+            <Field description="Notification No" isGid="true" length="12" mandatory="true" name="NOTIF_NO" sqlType="TEXT"/>
+            <Field description="Item Key: Defect; Cause, Action..." isGid="true" length="8" mandatory="true" name="OBJ_KEY" sqlType="INTEGER"/>
+            <Field description="Notification Header Details" isGid="true" length="10" mandatory="true" name="NOTIF" sqlType="TEXT"/>
+            <Field description="Long Text Length" isGid="false" length="2" mandatory="false" name="LONG_TEXT_LENGTH" sqlType="INTEGER"/>
+            <Field description="Long text" isGid="false" length="9999" mandatory="false" name="LONG_TXT" sqlType="TEXT"/>
+            <Field description="Processing mode for incoming values" isGid="false" length="1" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.NOTIF_LONG_TEXT_VIEW" description="" name="NOTIF_LONG_TEXT_VIEW">
+            <Field description="Notification No" isGid="true" length="12" mandatory="true" name="NOTIF_NO" sqlType="TEXT"/>
+            <Field description="Item Key: Defect; Cause, Action..." isGid="true" length="8" mandatory="true" name="OBJ_KEY" sqlType="INTEGER"/>
+            <Field description="Object Type" isGid="true" length="10" mandatory="true" name="OBJ_TYPE" sqlType="TEXT"/>
+            <Field description="Long Text Length" isGid="false" length="2" mandatory="false" name="LONG_TEXT_LENGTH" sqlType="INTEGER"/>
+            <Field description="Long text" isGid="false" length="9999" mandatory="false" name="LONG_TXT" sqlType="TEXT"/>
+            <Field description="Processing mode for incoming values" isGid="false" length="1" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.NOTIF_ATTACHMENT" description="Attachment" name="NOTIF_ATTACHMENT">
+            <Field description="UID" isGid="true" length="32" mandatory="false" name="UID" sqlType="TEXT"/>
+            <Field description="File Name" isGid="false" length="255" mandatory="false" name="FILE_NAME" sqlType="TEXT"/>
+            <Field description="Mime Type" isGid="false" length="20" mandatory="false" name="MIME_TYPE" sqlType="TEXT"/>
+            <Field description="Download URL" isGid="false" length="255" mandatory="false" name="URL" sqlType="TEXT"/>
+            <Field description="External or Internal URL" isGid="false" length="1" mandatory="false" name="EXTERNAL_URL" sqlType="TEXT"/>
+            <Field description="External URL Requires Authentication" isGid="false" length="1" mandatory="false" name="URL_REQUIRES_AUTH" sqlType="TEXT"/>
+            <Field description="Path to the file on the device" isGid="false" length="255" mandatory="false" name="LOCAL_PATH" sqlType="TEXT"/>
+            <Field description="Do not cache" isGid="false" length="1" mandatory="false" name="NO_CACHE" sqlType="TEXT"/>
+            <Field description="Server timestamp" isGid="false" length="20" mandatory="false" name="SERVER_TIMESTAMP" sqlType="INTEGER"/>
+            <Field description="Tag 1" isGid="false" length="100" mandatory="false" name="TAG1" sqlType="TEXT"/>
+            <Field description="Tag 2" isGid="false" length="100" mandatory="false" name="TAG2" sqlType="TEXT"/>
+            <Field description="Tag 3" isGid="false" length="100" mandatory="false" name="TAG3" sqlType="TEXT"/>
+            <Field description="Tag 4" isGid="false" length="100" mandatory="false" name="TAG4" sqlType="TEXT"/>
+            <Field description="Tag 5" isGid="false" length="100" mandatory="false" name="TAG5" sqlType="TEXT"/>
+            <Field description="Status" isGid="false" length="32" mandatory="false" name="ATTACHMENT_STATUS" sqlType="TEXT"/>
+            <Field description="Auto Download Flag" isGid="false" length="1" mandatory="false" name="AUTO_DOWNLOAD" sqlType="TEXT"/>
+        </item>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="" name="NOTIFICATION" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.NOTIFICATION_HEADER" description="" name="NOTIFICATION_HEADER">
+            <Field description="" isGid="true" length="32" mandatory="true" name="NOTIF_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="COMPANY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="32" mandatory="false" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="12" mandatory="false" name="NOTIF_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="2" mandatory="false" name="NOTIF_TYPE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="2" mandatory="false" name="PRIORITY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="8" mandatory="false" name="WRKTYP_GRP" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="4" mandatory="false" name="WRKTYP_CODE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CRTD_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CHGD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CHGD_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CMP_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="1000" mandatory="false" name="REASON" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="1000" mandatory="false" name="ACTION" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="STATUS" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Description" name="OPERATOR" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.OPERATOR_HEADER" description="" name="OPERATOR_HEADER">
+            <Field description="" isGid="true" length="0" mandatory="true" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="0" mandatory="true" name="PHONE" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="0" mandatory="true" name="REP" sqlType="TEXT"/>
+            <Field description="Text (100 characters)" isGid="false" length="100" mandatory="false" name="LOCATION" sqlType="TEXT"/>
+            <Field description="Text (100 characters)" isGid="false" length="100" mandatory="false" name="UWI" sqlType="TEXT"/>
+            <Field description="Text (100 characters)" isGid="false" length="100" mandatory="false" name="WELL_NAME" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="" name="PDF_REQUEST" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.PDF_REQUEST_HEADER" description="" name="PDF_REQUEST_HEADER">
+            <Field description="" isGid="true" length="19" mandatory="true" name="REQUEST_ID" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="REQUEST_STATUS" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="USER_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="32" mandatory="false" name="ATTACHMENT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="ERROR_MSG" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Report" name="REPORT" onConflict="SERVER_WINS" save="false">
+        <header className="com.pd.forms.be.REPORT_HEADER" description="" name="REPORT_HEADER">
+            <Field description="" isGid="false" length="32" mandatory="false" name="STMR_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="32" mandatory="false" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="COMPANY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CRTD_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="SUBM_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="SUBM_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="TIME_ZONE" sqlType="TEXT"/>
+        </header>
+        <item className="com.pd.forms.be.REPORT_ITEM" description="" name="REPORT_ITEM">
+            <Field description="" isGid="false" length="0" mandatory="false" name="STMR_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TOPIC_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TOPIC_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TOPIC_NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TOPIC_NOTE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TOPIC_START" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="CTA_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="CTA_TYPE" sqlType="TEXT"/>
+        </item>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Rig" name="RIG" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.RIG_HEADER" description="" name="RIG_HEADER">
+            <Field description="" isGid="true" length="0" mandatory="true" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="DESCR" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="0" mandatory="true" name="COMP_CODE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="RIG_TYPE" sqlType="TEXT"/>
+        </header>
+        <item className="com.pd.forms.be.RIG_MANAGER" description="" name="RIG_MANAGER">
+            <Field description="Functional Location Label" isGid="true" length="40" mandatory="true" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="Company Code" isGid="true" length="4" mandatory="true" name="COMP_CODE" sqlType="TEXT"/>
+            <Field description="Characteristic Value" isGid="true" length="70" mandatory="true" name="ROLE" sqlType="TEXT"/>
+            <Field description="User Name" isGid="false" length="12" mandatory="false" name="USER_ID" sqlType="TEXT"/>
+            <Field description="Personnel Number" isGid="true" length="8" mandatory="true" name="PERSON_NO" sqlType="INTEGER"/>
+            <Field description="Text (100 characters)" isGid="false" length="100" mandatory="false" name="USER_NAME" sqlType="TEXT"/>
+        </item>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Rig Type" name="RIG_TYPE" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.RIG_TYPE_HEADER" description="" name="RIG_TYPE_HEADER">
+            <Field description="" isGid="true" length="20" mandatory="true" name="RIG_TYPE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="DESCR" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Application Setting" name="SETTING" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.SETTING_HEADER" description="" name="SETTING_HEADER">
+            <Field description="" isGid="true" length="0" mandatory="true" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="VALUE" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="" name="STMR" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.STMR_HEADER" description="" name="STMR_HEADER">
+            <Field description="" isGid="true" length="32" mandatory="true" name="STMR_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="RIG_TYPE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="RIG_MGR_EMAIL" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="COMPANY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CRTD_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="SUBM_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="DATE_COMP" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="WELL_LOC" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="OPERATOR" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="PROVINCE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="SHIFT" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="SHIFT_TIME" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CHAIRED_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="ONSITE_MGR" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="2147483647" mandatory="false" name="ONSITE_MGR_SIGN" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="ONSITE_SUP" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="2147483647" mandatory="false" name="ONSITE_SUP_SIGN" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="STMR_STATUS" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="LAST_SYNC_USER" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="LAST_SYNC_TIME" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="TIME_ZONE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </header>
+        <item className="com.pd.forms.be.STMR_CREW" description="" name="STMR_CREW">
+            <Field description="" isGid="true" length="32" mandatory="true" name="STMR_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="32" mandatory="true" name="CREW_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CREW_POS" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CREW_NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="2147483647" mandatory="false" name="CREW_SIGN" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="20" mandatory="false" name="CREW_TYPE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.STMR_TOPIC" description="" name="STMR_TOPIC">
+            <Field description="" isGid="true" length="32" mandatory="true" name="STMR_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="10" mandatory="true" name="TOPIC_NO" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="20" mandatory="false" name="TOPIC_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TOPIC_NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="2147483647" mandatory="false" name="TOPIC_NOTE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="TOPIC_START" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="32" mandatory="false" name="CTA_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="CTA_TYPE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.STMR_FORM" description="" name="STMR_FORM">
+            <Field description="" isGid="true" length="32" mandatory="true" name="STMR_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="10" mandatory="true" name="TOPIC_NO" sqlType="INTEGER"/>
+            <Field description="" isGid="true" length="32" mandatory="true" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="VER_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CRTD_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="SUBM_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="DATE_COMP" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="COMPANY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="RIG_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="COMMENTS" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="FORM_STATUS" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="LAST_SYNC_USER" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="LAST_SYNC_TIME" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="TIME_ZONE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.STMR_FORM_DATA" description="" name="STMR_FORM_DATA">
+            <Field description="" isGid="true" length="0" mandatory="true" name="STMR_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="0" mandatory="true" name="TOPIC_NO" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="0" mandatory="true" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="DATA" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.STMR_ACTION" description="" name="STMR_ACTION">
+            <Field description="" isGid="true" length="0" mandatory="true" name="STMR_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="0" mandatory="true" name="FORM_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="ACTION_CODE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+    </BusinessEntity>
+    <BusinessEntity attachments="true" description="Template" name="TMPLT" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.TMPLT_HEADER" description="" name="TMPLT_HEADER">
+            <Field description="" isGid="true" length="32" mandatory="true" name="TMPLT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="NAME" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="DESCR" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="32" mandatory="false" name="CAT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="DB_SCHEMA" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="PRIMARY_TABLE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="FORM_ID_PREFIX" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="L_VER_NO" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="L_VER_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="L_CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="L_CRTD_ON" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="L_READ_FLAG" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </header>
+        <item className="com.pd.forms.be.TMPLT_ASSGN" description="" name="TMPLT_ASSGN">
+            <Field description="" isGid="true" length="32" mandatory="true" name="ASSGN_ID" sqlType="TEXT"/>
+            <Field description="" isGid="true" length="32" mandatory="true" name="TMPLT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="ASSGN_TYPE" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="VAL1" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="VAL2" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="50" mandatory="false" name="VAL3" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="VAL4" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.TMPLT_VER" description="" name="TMPLT_VER">
+            <Field description="" isGid="true" length="32" mandatory="true" name="VER_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="VER_NO" sqlType="INTEGER"/>
+            <Field description="" isGid="true" length="32" mandatory="true" name="TMPLT_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="100" mandatory="false" name="DESCR" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="10" mandatory="true" name="CRTD_BY" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="19" mandatory="false" name="CRTD_ON" sqlType="INTEGER"/>
+            <Field description="" isGid="false" length="10" mandatory="false" name="STATUS" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="P_MODE" sqlType="TEXT"/>
+        </item>
+        <item className="com.pd.forms.be.TMPLT_ATTACHMENT" description="Attachment" name="TMPLT_ATTACHMENT">
+            <Field description="UID" isGid="true" length="32" mandatory="false" name="UID" sqlType="TEXT"/>
+            <Field description="File Name" isGid="false" length="255" mandatory="false" name="FILE_NAME" sqlType="TEXT"/>
+            <Field description="Mime Type" isGid="false" length="20" mandatory="false" name="MIME_TYPE" sqlType="TEXT"/>
+            <Field description="Download URL" isGid="false" length="255" mandatory="false" name="URL" sqlType="TEXT"/>
+            <Field description="External or Internal URL" isGid="false" length="1" mandatory="false" name="EXTERNAL_URL" sqlType="TEXT"/>
+            <Field description="External URL Requires Authentication" isGid="false" length="1" mandatory="false" name="URL_REQUIRES_AUTH" sqlType="TEXT"/>
+            <Field description="Path to the file on the device" isGid="false" length="255" mandatory="false" name="LOCAL_PATH" sqlType="TEXT"/>
+            <Field description="Do not cache" isGid="false" length="1" mandatory="false" name="NO_CACHE" sqlType="TEXT"/>
+            <Field description="Server timestamp" isGid="false" length="20" mandatory="false" name="SERVER_TIMESTAMP" sqlType="INTEGER"/>
+            <Field description="Tag 1" isGid="false" length="100" mandatory="false" name="TAG1" sqlType="TEXT"/>
+            <Field description="Tag 2" isGid="false" length="100" mandatory="false" name="TAG2" sqlType="TEXT"/>
+            <Field description="Tag 3" isGid="false" length="100" mandatory="false" name="TAG3" sqlType="TEXT"/>
+            <Field description="Tag 4" isGid="false" length="100" mandatory="false" name="TAG4" sqlType="TEXT"/>
+            <Field description="Tag 5" isGid="false" length="100" mandatory="false" name="TAG5" sqlType="TEXT"/>
+            <Field description="Status" isGid="false" length="32" mandatory="false" name="ATTACHMENT_STATUS" sqlType="TEXT"/>
+            <Field description="Auto Download Flag" isGid="false" length="1" mandatory="false" name="AUTO_DOWNLOAD" sqlType="TEXT"/>
+        </item>
+    </BusinessEntity>
+    <BusinessEntity attachments="false" description="Topic" name="TOPIC" onConflict="SERVER_WINS" save="true">
+        <header className="com.pd.forms.be.TOPIC_HEADER" description="" name="TOPIC_HEADER">
+            <Field description="" isGid="true" length="0" mandatory="true" name="TOPIC_ID" sqlType="TEXT"/>
+            <Field description="" isGid="false" length="0" mandatory="false" name="TOPIC_NAME" sqlType="TEXT"/>
+        </header>
+    </BusinessEntity>
+</Application>

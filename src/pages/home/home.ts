@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { UnviredCordovaSDK, LoginParameters, LoginResult } from '@ionic-native/unvired-cordova-sdk/ngx'
+import { UnviredSDKHelper } from '../../Services/UnviredSDKHelper';
 declare var navigator: any;
+declare var window: any;
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private camera: Camera, private unviredSDK: UnviredCordovaSDK) {
+  constructor(public alertController: AlertController, public navCtrl: NavController, private unviredSDK: UnviredSDKHelper, private camera: Camera) {
 
   }
 
@@ -22,7 +24,7 @@ export class HomePage {
     }, {})
   }
 
-  onCameraButtonWithIonicNativeClick() {
+  async onCameraButtonWithIonicNativeClick() {
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.FILE_URI,
@@ -41,22 +43,28 @@ export class HomePage {
     });
   }
 
-  async onUnviredSDKButtonClick() {
-    console.log('Secondary Button Clicked');
-    // This is usually done in app.component.ts of your app.
-    // Before you can interact with UMP, you need to initialize the SDK and authenticate with UMP.
-    // SDK Initialization
-    let loginParameters = new LoginParameters()
-    loginParameters.appName = 'UNVIRED_DIGITAL_FORMS'
-    loginParameters.metadataPath = '../assets/metadata.json'
-    let loginResult: LoginResult
-    try {
-      loginResult = await this.unviredSDK.login(loginParameters)
-    }
-    catch (error) {
-      this.unviredSDK.logError("AppComponent", "Initialize", "Error during login: " + error)
-    }
+  async presentAlert(title, message) {
+    const alert = await this.alertController.create({
+      title: title,
+      message: message,
+      buttons: ['OK']
+    });
 
+    await alert.present();
   }
 
+  async onUnviredSDKButtonClick() {
+    // Setting metadata.json fails with the error NewtonSoftJSON library is missing.
+    // var parameters = {"appName": "DIGITAL_FORMS", 'metadataPath': './assets/js/metadata.json'};
+
+    // Without Metadata.json
+    var parameters = { "appName": "DIGITAL_FORMS" };
+    try {
+      let loginResult = await this.unviredSDK.login(parameters)
+      this.presentAlert("SUCCESS", JSON.stringify(loginResult));
+    }
+    catch (error) {
+      this.presentAlert("ERROR", JSON.stringify(error))
+    }
+  }
 }

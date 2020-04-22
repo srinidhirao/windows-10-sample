@@ -26,7 +26,7 @@
     "@ionic-native/unvired-cordova-sdk": "^5.22.0",
     "@ionic/storage": "2.2.0",
     "cordova-plugin-camera": "^4.1.0",
-    "cordova-plugin-unvired-sdk": "git+https://github.com/unvired/cordova-plugin-unvired-sdk.git",
+    "cordova-plugin-unvired-sdk": "file:unvired-cordova-plugin",
     "cordova-windows": "^7.0.1",
     "ionic-angular": "3.9.9",
     "ionicons": "3.0.0",
@@ -48,13 +48,13 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-camera": {},
-      "cordova-plugin-unvired-sdk": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-unvired-sdk": {}
     },
     "platforms": [
       "windows"
